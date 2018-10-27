@@ -1,0 +1,37 @@
+<!--packages/business/order-item/index.wxml-->
+<view bindtap='onClick' class='order-item'>
+
+  <view catchtap='onShopClick' class='shop-info'>
+    <sr-image wx:if='{{options.shop.imageUrl}}' src='{{options.shop.imageUrl}}' image-class='img-shop' />
+    <sr-icon wx:else type='shop_fill' size='32' icon-class='ic-shop' />
+    <text class='shop-name'>{{options.shop.name}}</text>
+    <button wx:if='{{options.shop.telNumber}}' catchtap='onCallClick' class='btn-call'>打电话</button>
+    <sr-icon wx:if='{{options.shop.arrow}}' type='arrow-right' size='20' icon-class='ic-right' />
+  </view>
+
+  <view catchtap='onProductClick' class='product {{!options.canEdit?"narrow":""}}'>
+    <sr-image src='{{options.product.imageUrl}}' image-class='{{!options.canEdit?"img-product-narrow":"img-product"}}' />
+    <view class='product-info {{!options.canEdit?"narrow":""}}'>
+      <view class='name {{!options.canEdit?"narrow":""}}'>{{options.product.name}}</view>
+      <view class='spec'>{{options.product.spec?'规格:'+options.product.spec:''}}</view>
+      <view wx:if='{{options.product.price && options.canEdit && !options.product.hidePrice}}' class='price'>
+        <text class='label'>￥</text>{{options.product.price}}</view>
+    </view>
+    <view wx:if='{{!options.canEdit}}' class='buy-info'>
+      <view wx:if='{{!options.product.hidePrice}}' class='price'>￥{{options.product.price}}</view>
+      <view class='count'>x{{options.product.count}}</view>
+    </view>
+  </view>
+
+  <view wx:if='{{options.canEdit}}' class='buy-count'>
+    <text>购买数量</text>
+    <view catchtap='doSubtract' class='ic-move-wrap'>
+      <sr-icon type='move' size='16' icon-class='ic-move' />
+    </view>
+    <input class='count-input' bindchange='onCountChange' value='{{options.product.count}}' type='number' />
+    <view catchtap='doAdd' class='ic-add-wrap'>
+      <sr-icon type='add' size='16' icon-class='ic-add' />
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,50 @@
+.area-bottom-container {
+  background: #fff;
+}
+
+.header {
+  height: 102rpx;
+  font-size: 30rpx;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid #ddd;
+}
+
+.header .close {
+  padding: 37rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.labels {
+  display: flex;
+  padding-left: 20rpx;
+}
+
+.label {
+  padding: 0 17rpx;
+  font-size: 32rpx;
+  color: #333;
+  line-height: 63rpx;
+  margin: 0 28rpx;
+}
+
+.label.active {
+  color: #66bb47;
+  border-bottom: 4rpx solid #66bb47;
+}
+
+.items {
+  height: 835rpx;
+  padding-top: 6rpx;
+}
+
+.item {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+  padding: 20rpx 50rpx;
+}

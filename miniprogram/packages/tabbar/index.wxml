@@ -1,0 +1,20 @@
+<!--components/tabbar/index.wxml-->
+<view class='tabbar-body' style='padding-bottom:{{paddingBottom}}px;padding-top:{{paddingTop}}px'>
+  <slot></slot>
+</view>
+
+<view class='tabbar-container' style='padding-bottom:{{ hasIPhoneX ? "35rpx" : "8rpx" }}'>
+  <view class='tabbar-row'>
+    <view wx:for='{{dataProvider}}' 
+          wx:key='item.url'
+          class='tabbar-col {{ item.selected ? "selected" : ""}}' 
+          bindtap='tabChangeHandler'
+          data-url = '{{item.url}}'
+          >
+        <sr-icon class='tabbar-ico' 
+                 type='{{item.icon}}' 
+                 size='{{item.size}}'></sr-icon>
+        <view class='tabbar-label'>{{item.label}}</view>
+    </view>
+  </view>
+</view>

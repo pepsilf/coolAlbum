@@ -1,0 +1,60 @@
+.feeling {
+  height: 150rpx;
+  padding: 40rpx 28rpx;
+  width: calc(100% - 56rpx);
+  font-size: 30rpx;
+  color: #333;
+  background: #ffffff;
+}
+
+.image-view {
+  height: 218rpx;
+  width: 218rpx;
+  display: inline-block;
+  margin: 10rpx;
+  border-radius: 4rpx;
+  background: #ddd;
+}
+
+.img-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 17rpx;
+}
+
+.image-view.add {
+  border: 1px solid #ddd;
+  border-radius: 4rpx;
+  display: inline-flex;
+  font-size: 26rpx;
+  color: #999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.photoTypes{
+  /* width:100%; */
+  display: flex;
+  margin:30rpx;
+  padding:20rpx;
+  border-top:1rpx solid #ddd;
+  flex-wrap: wrap;
+}
+
+.imgItem{
+  width:180rpx;
+  text-align: center;
+  height:50rpx;
+  line-height: 50rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 10rpx;
+  margin:10rpx;
+  font-size: 32rpx;
+  color:#999;
+}
+.imgItems{
+  background: #ddd
+}
+

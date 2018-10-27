@@ -1,0 +1,58 @@
+/* packages/address/index.wxss */
+
+.address-container {
+  padding: 40rpx 32rpx 36rpx 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110rpx;
+  background: #fff;
+}
+
+.btn-add-address {
+  border: 1px solid #bbb;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  color: #222;
+  width: 480rpx;
+  height: 86rpx;
+}
+
+.ic_address {
+  color: #999;
+  flex-shrink: 0;
+}
+
+.address-container .content {
+  margin-left: 20rpx;
+  flex: 1;
+}
+
+.address-container .content .name {
+  font-size: 30rpx;
+  color: #222;
+  display: block;
+}
+
+.address-container .content .address {
+  font-size: 28rpx;
+  color: #222;
+  line-height: 30rpx;
+  margin-top: 34rpx;
+  display: block;
+}
+
+.ic_right {
+  color: #999;
+  display: inline-block;
+}
+
+.address-container .right {
+  flex-shrink: 0;
+  padding-left: 20rpx;
+}
+
+.address-container .right .default {
+  font-size: 26rpx;
+  color: #999;
+}

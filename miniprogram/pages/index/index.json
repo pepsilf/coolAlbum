@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "sr-see": "/packages/see/index"
+  }
+}

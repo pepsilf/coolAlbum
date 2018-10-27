@@ -1,0 +1,26 @@
+<!--packages/area/index.wxml-->
+<sr-popper-seletor 
+    show="{{ show }}"
+    overlay = "{{ false }}"
+    selector="{{ selector }}"
+    type = "top"
+    >
+  <view class='area-container sr-clear'>
+     <scroll-view wx:for="{{dataProvider}}" 
+                  wx:key='{{column.type}}' 
+                  wx:for-item="column" 
+                  class="area-column  area_{{column.type}}" scroll-y="true">
+        <view class=' {{index == 0 ? "all_btn" : "choose_btn"}}' 
+              data-colunm-index="{{column.index}}" 
+              bindtap='chooseAllHandler'>{{index == 0 ? '全  国' : '全  部'}}</view>
+        <view wx:for="{{column.list}}" wx:key="{{item.id}}"
+              class="area-item area-item_{{column.type}} {{ column.selectIndex == index ? 'selected' : ''}}'"
+              data-item="{{item}}"
+              data-select-index="{{index}}"
+              data-colunm-index="{{column.index}}" 
+              bindtap='tapChangeHandler'>
+            <text>{{item.areaName}}</text>
+        </view>
+     </scroll-view>
+  </view>
+</sr-popper-seletor>

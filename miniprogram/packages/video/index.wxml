@@ -1,0 +1,9 @@
+<block wx:if='{{playState===0 || videoPause}}'>
+  <view class='container video-class'>
+    <image id='image' mode='{{mode}}' src='{{thumbSrc}}' class="container video-class" binderror='onError' />
+    <image class="cover-play" bindtap="playVideo" src="/packages/resources/images/video-play.png" />
+  </view>
+</block>
+<block wx:else>
+  <video id="myVideo" src="{{src}}" class="video-class" objectFit="contain" controls custom-cache="{{false}}" bindended='onVideoEnd' bindpause='onVideoPause' bindplay='onVideoPlay'></video>
+</block>

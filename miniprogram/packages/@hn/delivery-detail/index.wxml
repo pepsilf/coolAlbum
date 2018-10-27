@@ -1,0 +1,54 @@
+<!--pages/delivery-info/index.wxml-->
+<view class='transport'>
+  <sr-icon type='deliver' size='26' icon-class='ic-deliver' />
+  <view class='right'>
+    <view wx:if='{{state}}' class='state'>物流状态：<text>{{state}}</text></view>
+    <view class='company'>
+      <text>物流公司：{{logisticName}}</text>
+      <button wx:if='{{!hideCopyBtn}}' bindtap='doCopy' data-content='{{logisticName + " " + logisticCode}}' class='copy-btn'>复制单号</button>
+    </view>
+    <view class='remark'>物流单号：{{logisticCode}}</view>
+  </view>
+  <view class='divider' />
+</view>
+<!-- 统一不显示收货地址了
+<view wx:if='{{delivery.addressDetailFull}}' class='receiver group'>
+  <image class='ic-address' src='/img/address.png' />
+  <view class='right'>
+    <view class='line1'>
+      <text>收货地址：</text>
+    </view>
+    <text class='address'>{{delivery.addressDetailFull}}</text>
+  </view>
+  <image src='/img/receiver-bottom.png' class='img-address-bottom' />
+</view> -->
+
+<block wx:if='{{Traces && Traces.length}}'>
+  <view class='container'>
+    <block wx:for='{{Traces}}' wx:key='id'>
+      <view class='trace'>
+        <view class='left'>
+          <view wx:if='{{index==0}}' class='circle active'>
+            <view class='inner-circle active'></view>
+          </view>
+          <view wx:else class='inner-circle'></view>
+        </view>
+        <view class='right'>
+          <view class='station {{index==0?"active":""}}'>
+            <block wx:for='{{item.station}}' wx:key='id' wx:for-item="str">
+              <text class='{{str.isMobile?"mobile":""}}' bindtap='doCall' data-mobile='{{str.val}}'>{{str.val}}</text>
+            </block>
+          </view>
+          <view class='time {{index==0?"active":""}}'>{{item.time}}</view>
+        </view>
+        <view class='line' />
+      </view>
+    </block>
+  </view>
+</block>
+<block wx:else>
+  <view class='empty'>
+    <image src='./assets/no-delivery-info.png' mode='widthFix' />
+    <text>暂无物流信息</text>
+  </view>
+</block>

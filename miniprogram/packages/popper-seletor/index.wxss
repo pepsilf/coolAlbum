@@ -1,0 +1,11 @@
+/* packages/category/index.wxss */
+
+.popper-dialog_body--right,
+.popper-dialog_body--top {
+  width: 100vw;
+  /* height: 100vh; */
+  overflow: hidden;
+  background: #fff;
+  /* top:100px;
+  position: absolute */
+} 

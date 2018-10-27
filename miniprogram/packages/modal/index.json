@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "sr-icon": "../icon/index",
+    "sr-button": "../button/index",
+    "pop-manager": "../common/pop-manager/index"
+  }
+}

@@ -1,0 +1,46 @@
+<sr-popper-seletor show="{{ show }}" overlay="{{ false }}" selector="{{ selector }}" type="top">
+
+  <view wx:if='{{!showBreedSelector}}' class='category-container sr-clear'>
+    <scroll-view class="category-level" scroll-y="true">
+      <view wx:for="{{categorys}}" 
+            wx:key="{{item.id}}" 
+            class="type-item  {{ selelctIndex == index ? 'type-item-selected' : ''}}'" 
+            data-code="{{item.id}}" 
+            data-index="{{index}}" 
+            bindtap='tapCategoryHandler'>
+        <text>{{item.name}}</text>
+      </view>
+    </scroll-view>
+    <scroll-view class="category-items" scroll-y="true">
+      <view class='inner'>
+        <button class='chooseAll_btn' bindtap='chooseAllHandler' wx:if='{{noAll}}'>全 部</button>
+        <view wx:for="{{categoryItems}}" wx:key="{{item.id}}" class='clear'>
+          <view class='title'>{{item.char}}</view>
+          <view class='content_inner'>
+            <view wx:for="{{item.list}}" 
+                  wx:key="{{rows.id}}" 
+                  wx:for-item="rows" 
+                  class='content_inner_row'>
+              <view wx:for="{{rows}}" 
+                    wx:key="{{item.id}}" 
+                    class='content'>
+                <view class="{{ item ? 'name' : ''}}" 
+                      data-selected='{{item}}' 
+                      bindtap='chooseCategoryHandler'>
+                  <view class='label'>{{item.name}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view wx:else 
+        class='breed-selector'>
+    <sr-layout-grid list='{{breedList}}' 
+                    class="search-bar__container" 
+                    labelField='name' 
+                    bindchange="chooseBreedHandler"></sr-layout-grid>
+  </view>
+</sr-popper-seletor>

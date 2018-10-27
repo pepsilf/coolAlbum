@@ -1,0 +1,12 @@
+<pop-manager
+  show="{{ showCategory }}"
+  type="{{ type || 'top' }}"
+  show-overlay="{{ false }}"
+  overlay="{{ false }}"
+  top='{{top}}px'
+  bindclickmask="handleMaskClick">
+  <!-- <view class="popper-dialog_body--{{type || 'top'}}" style="{{ height ? 'height:'+ height + 'px' : ''}}"> -->
+  <view class="popper-dialog_body--{{type || 'top'}}" style="{{ height ? 'height:'+ height : ''}}">
+    <slot></slot>
+  </view>
+</pop-manager>

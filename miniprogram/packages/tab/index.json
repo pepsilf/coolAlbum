@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "sr-icon": "/packages/icon/index",
+    "sr-popper-seletor": "/packages/popper-seletor/index"
+  }
+}

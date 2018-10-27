@@ -1,0 +1,63 @@
+<!--packages/seach-bar/index.wxml-->
+<view>
+  <view class='search-bar__body my-custom'>
+    <view class='search-item search-custom' wx:for="{{searchList}}" wx:key='type' data-item='{{item}}' bindtap='showHandler'>
+      <view class='search-label {{item.type == selected.type ? "selected" : ""}}'>
+        {{item.label}}
+      </view>
+      <sr-icon class='search-icon {{item.type == selected.type ? "selected" : ""}}' type='{{item.type == selected.type ?"arrow-top":"arrow-bottom"}}'></sr-icon>
+    </view>
+  </view>
+</view>
+
+<sr-category options='{{options.category}}' 
+             show="{{ selected.type == 'category' }}" 
+             selector="{{ selector }}" 
+             selected='{{ selected.category }}' 
+             noAll='{{!options.hideAllChose}}' 
+             bindchange="changeCategoryHandler">
+</sr-category>
+
+<sr-area show="{{ selected.type == 'city' }}" 
+         selector="{{ selector }}" 
+         showLevel='{{options.area.showLevel}}' 
+         bindchange="changeCityHandler">
+</sr-area>
+
+<sr-popper-seletor show="{{ selected.type == 'breeds' }}" 
+                   selector="{{ selector }}" 
+                   type="top">
+
+  <sr-layout-grid list='{{breeds}}' 
+                  class="search-bar__container" 
+                  labelField='name' 
+                  type="breeds" 
+                  bindchange="changeHandler"
+                  ></sr-layout-grid>
+</sr-popper-seletor>
+
+<sr-popper-seletor show="{{ selected.type == 'specifications' }}" 
+                   selector="{{ selector }}" 
+                   type="top">
+
+  <sr-layout-grid list='{{specifications}}' 
+                  groupField='details' 
+                  groupLabelField='specificName' 
+                  groupKeyField="specificId" 
+                  labelField='field' 
+                  type="specifications" 
+                  class="search-bar__container"
+                  bindchange="changeHandler">
+  </sr-layout-grid>
+
+</sr-popper-seletor>
+
+<block wx:for='{{customSearch}}' wx:key='id'>
+  <sr-popper-seletor show='{{ selected.type == item.type}}' selector="{{ selector }}" type="top">
+    <scroll-view style='height: inherit;' scroll-y="true">
+      <block wx:for='{{item.ds}}' wx:key='id' wx:for-item="listItem">
+        <view data-index='{{index}}' bindtap='onCustomItemClick' class='custom-item {{selected[selected.type].index == index?"selected":""}}'>{{listItem.name}}</view>
+      </block>
+    </scroll-view>
+  </sr-popper-seletor>
+</block>

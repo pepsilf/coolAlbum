@@ -1,0 +1,17 @@
+<!--packages/address/index.wxml-->
+<view class='address-container' bindtap='changeAddress'>
+  <block wx:if='{{address}}'>
+    <sr-icon type='coordinates' size='24' icon-class='ic_address' />
+    <view class='content'>
+      <text class='name' space='ensp' selectable>{{address.name}}   {{address.mobile}}</text>
+      <text class='address' selectable>{{address.provinceName}} {{address.cityName}} {{address.areaName}}  {{address.detailInfo}}</text>
+    </view>
+    <view class='right'>
+      <text wx:if='{{address.isDefault}}' class='default'>默认</text>
+      <sr-icon type='arrow-right' size='14' icon-class='ic_right' />
+    </view>
+  </block>
+  <block wx:else>
+    <button class='btn-add-address '>添加收货地址</button>
+  </block>
+</view>

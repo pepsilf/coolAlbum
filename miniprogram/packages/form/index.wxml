@@ -1,0 +1,41 @@
+<!--packages/form/index.wxml-->
+<view class='form_contariner'>
+  <sr-panel title='{{title}}'
+          >
+        <block wx:if='{{items && items.length}}'>
+
+          <block wx:for='{{items}}' 
+                 wx:if='{{!item.hide}}' 
+                 wx:key='{{item.feild}}'>
+              <sr-cell  
+                  cell-class='form_cell'
+                  cell-custom='{{item.contentClass ? item.contentClass : ""}}'
+                  wx:if='{{!item.isSplit}}' 
+                  title="{{item.title}}" 
+                  label='{{item.label}}'
+                  value="{{item.isLink ? item.value || item.tip : ''}}"
+                  is-link='{{item.isLink}}'
+                  is-preview = '{{ isPreview }}'
+                  url='{{item.path}}'
+                  data-index= '{{index}}'
+                  catchtap = 'handlerTap'
+                  >
+                  <sr-field
+                          show = '{{item.show}}'
+                          class = 'sr_field'
+                          is-preview = '{{ isPreview }}'
+                          options = '{{ item }}'
+                          field-class = 'sr-field'
+                          bindhide ='handlerHide'
+                          data-index = '{{index}}'
+                          bindhandledoSth='handledoSth'
+                          bindchange ='handlerFieldChange'
+                        ></sr-field>
+              </sr-cell>
+              <view wx:else class='sr-form_group' >
+                  <text>{{item.title}}</text>
+              </view>
+          </block>
+        </block>
+  </sr-panel>
+</view>

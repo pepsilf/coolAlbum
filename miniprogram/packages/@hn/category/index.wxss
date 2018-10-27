@@ -1,0 +1,130 @@
+/* packages/category/index.wxss */
+
+.clear {
+  clear: both; 
+  display: block;
+}
+
+.popper-dialog_body--right,
+.popper-dialog_body--top {
+  width: 100vw;
+  /* height: 100vh; */
+  overflow: hidden;
+  background: #fff;
+  /* top:100px;
+  position: absolute */
+} 
+
+.category-container {
+  width: 100vw;
+  height: inherit;
+}
+.category-level,.category-items {
+  float: left;
+  height: inherit;
+}
+
+.type-item {
+  border-left: 3px solid #fff;
+  padding: 18rpx;
+  text-align: center;
+}
+
+
+.type-item-selected {
+  border-left-color: #66bb47;
+  color:#66bb47;
+  background-color: #fff;
+}
+
+.category-level {
+  width: 30vw;
+  background-color: #efefef;
+}
+
+.category-items {
+  width: 70vw;
+}
+
+.category-items .inner {
+  padding: 20rpx;
+  padding-bottom: 80rpx;
+}
+
+.category-items .title {
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.category-items .content {
+  /* flex: 1;
+  display: inline-block;  
+  box-sizing: border-box;
+
+  border:1px solid #efefef;
+  height: 60rpx; */
+  /* display: table-cell; */
+
+  
+  flex: 1;
+  justify-content:center;
+  
+}
+.content .name {
+  margin: 10rpx;
+  height: 100rpx;
+
+  border:1rpx solid #efefef;
+  /* line-height: 100rpx; */
+  border-radius: 8rpx;
+  text-align: center;
+}
+
+.content .label {
+  position: relative;
+  font-size: 0.899rem;
+  height: inherit;
+  padding: 2rpx;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+
+.content_inner {
+  /* display: flex;
+  flex-direction: row; */
+  /* display: table-row; */
+  /* flex-direction: row;
+  justify-content:flex-start;
+  flex-wrap:wrap; */
+}
+
+.content_inner_row{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+  justify-content:center;
+  align-items: center;
+}
+
+.chooseAll_btn {
+  width: 90%;
+  border-style: none;
+  height: 70rpx;
+  border-radius: 46rpx;
+  display: flex;
+  background-color: #fff;
+  border:1px solid #d9d9d9;
+  align-items: center;
+  justify-content: center;
+  margin: 20rpx auto 40rpx auto;
+  font-size: 30rpx;
+  color: #000;
+}
+
+.breed-selector,.search-bar__container{
+  width:100vw;
+  height: inherit;
+}

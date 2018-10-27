@@ -1,0 +1,12 @@
+<!--packages/popper-select/index.wxml-->
+<popper show="{{show}}" type="bottom">
+  <view class='popper-select-header'>
+    <view class='labels'>
+        <text>{{title}}</text>
+    </view>
+    <sr-icon type='close' icon-class='close' catchtap='hide' size='14'/>
+  </view>
+  <scroll-view class='items' scroll-y style='height:{{scrollHeight || 320}}rpx'>
+    <slot></slot>
+  </scroll-view>
+</popper>

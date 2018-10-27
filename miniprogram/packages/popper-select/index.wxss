@@ -1,0 +1,28 @@
+/* packages/popper-select/index.wxss */
+
+.popper-select-header {
+  height: 80rpx;
+  font-size: 30rpx;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  justify-content: center;
+  background: #fff;
+}
+
+.close {
+  padding: 28rpx 30rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.items{
+  background: #fff;
+}
+
+.labels {
+  text-align: center;
+}

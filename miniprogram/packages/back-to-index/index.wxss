@@ -1,0 +1,13 @@
+.back-to-index {
+  position: fixed;
+}
+
+.theme0 {
+  width: 138rpx;
+  height: 138rpx;
+}
+
+.theme1 {
+  width: 130rpx;
+  height: 130rpx;
+}

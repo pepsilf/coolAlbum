@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "sr-list-loader": "/packages/list-loader/index",
+    "sr-search-bar": "/packages/@hn/search-bar/index",
+    "sr-image": "/packages/image/index",
+    "sr-icon":"/packages/icon/index",
+    "sr-form": "/packages/form/index"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,22 @@
+.block {
+  display: block;
+}
+
+.relative {
+  position: relative;
+  overflow: visible;
+}
+
+.icon-delete {
+  position: absolute;
+  top: -8rpx;
+  right: -2rpx;
+  color: #ff4518;
+  z-index: 1;
+  background: #fff;
+  width: 36rpx;
+  height: 36rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 18rpx;
+}

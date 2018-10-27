@@ -1,0 +1,37 @@
+<!--packages/components/tab-view/index.wxml-->
+<view class='tabs flex-center border-custom' style='height:{{height}};padding:{{padding}}'>
+  <block wx:for='{{tabs}}' wx:key='id'>
+    <view bindtap='onTabClick' data-index='{{index}}' class='tab-parent flex-center' style='flex:{{item.flex || 1}}'>
+      <view class='tab flex-center' style='font-size:{{index==activeIndex?activeFontSize:fontSize}};color:{{index==activeIndex?activeColor:color}}'>{{item.name}}
+        <view wx:if='{{item.badge}}' class='tab-badge'>{{item.badge}}</view>
+      </view>
+      <view wx:if='{{index==activeIndex}}' class='tab-bottom' style='background:{{barColor}};width:{{barWidth}}' />
+    </view>
+  </block>
+</view>
+<slot />
+<block wx:if='{{tabs.length >= 1}}'>
+  <view class='{{activeIndex==0?"":"hidden"}}'>
+    <slot name='tab-content-1' />
+  </view>
+</block>
+<block wx:if='{{tabs.length >= 2}}'>
+  <view class='{{activeIndex==1?"":"hidden"}}'>
+    <slot name='tab-content-2' />
+  </view>
+</block>
+<block wx:if='{{tabs.length >= 3}}'>
+  <view class='{{activeIndex==2?"":"hidden"}}'>
+    <slot name='tab-content-3' />
+  </view>
+</block>
+<block wx:if='{{tabs.length >= 4}}'>
+  <view class='{{activeIndex==3?"":"hidden"}}'>
+    <slot name='tab-content-4' />
+  </view>
+</block>
+<block wx:if='{{tabs.length >= 5}}'>
+  <view class='{{activeIndex==4?"":"hidden"}}'>
+    <slot name='tab-content-5' />
+  </view>
+</block>

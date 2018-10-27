@@ -1,0 +1,10 @@
+<block wx:if='{{noPrePage || show}}'>
+  <view catchtap='gotoIndex' class='ex-class back-to-index' style='bottom:{{bottom+dBottom}}rpx; right:{{right+dRight}}rpx'>
+    <block wx:if='{{theme === 0}}'>
+      <image class='theme0' src='../resources/images/back-to-index.png'></image>
+    </block>
+    <block wx:if='{{theme === 1}}'>
+      <image class='theme1' src='../resources/images/back-to-index2.png'></image>
+    </block>
+  </view>
+</block>

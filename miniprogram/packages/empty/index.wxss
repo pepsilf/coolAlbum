@@ -1,0 +1,19 @@
+/* packages/empty/index.wxss */
+
+
+.wx-empty-body{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wx-empty-img{
+  margin-top: 52rpx;
+  width: 260rpx;
+  height: 260rpx;
+}
+.wx-empty-text{
+  font-size: 28rpx;
+  color: #222222;
+  margin-top: 36rpx;
+  margin-bottom: 69rpx;
+}

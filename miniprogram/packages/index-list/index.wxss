@@ -1,0 +1,31 @@
+/* packages/index-list/index.wxss */
+
+.indexlist-container {
+  position: relative;
+}
+.indexlist-nav-container {
+  position: absolute;
+  top:16px;
+  right: 0;
+  color: #969696;
+  z-index: 10;
+}
+
+.indexlist-content {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.indexlist-navitem {
+  text-align: center;
+  width: 30px;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.indelist-empty {
+  text-align: center;
+  margin-top: 40rpx;
+}

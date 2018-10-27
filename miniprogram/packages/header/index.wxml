@@ -1,0 +1,14 @@
+<!--packages/header/index.wxml-->
+<view class='sr-header-container' 
+      style='height:{{barHeight}}px'>
+   <view class='sr-header-tooler' 
+         style='height:{{toolerHeight}}px'>
+        <text>{{title}}</text>
+   </view>
+</view>
+
+
+<view class='sr-body' 
+      style='top:{{barHeight}}px;'>
+  <slot></slot>
+</view>

@@ -1,0 +1,23 @@
+/* packages/header/index.wxss */
+
+.sr-header-container {
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
+  top:0;
+  background-color: #fff;
+}
+
+.sr-header-tooler {
+  position: absolute;
+  bottom: 0;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.sr-body {
+  position: relative;
+}

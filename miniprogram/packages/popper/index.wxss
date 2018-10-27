@@ -1,0 +1,15 @@
+
+ 
+.popper-dialog_body--bottom {
+  width: 100vw;
+  overflow: hidden;
+} 
+
+.popper-dialog_body--left,
+.popper-dialog_body--right {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #fff;
+} 
+

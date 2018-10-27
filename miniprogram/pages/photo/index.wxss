@@ -1,0 +1,110 @@
+.image-view {
+  height: 218rpx;
+  width: 218rpx;
+  display: inline-block;
+  margin: 10rpx;
+  border-radius: 4rpx;
+  background: #ddd;
+}
+.img-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 17rpx;
+}
+.image-view.add {
+  border: 1px solid #ddd;
+  border-radius: 4rpx;
+  display: inline-flex;
+  font-size: 26rpx;
+  color: #999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.doUpload{
+  width:200rpx;
+  margin:0 auto;
+  height:50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f6f;
+  border-radius: 50rpx;
+  font-size: 32rpx;
+  color: #fff
+}
+
+/* pages/calculator/index.wxss */
+
+page{
+  padding-bottom: 128rpx;
+}
+
+.top {
+  height: 260rpx;
+  display: flex;
+  justify-content: center;
+  padding: 0 36rpx;
+  flex-direction: column;
+  background-image: linear-gradient(45deg, #538fff 0%, #2873ff 100%);
+}
+
+.top .label {
+  font-size: 30rpx;
+  opacity: 0.8;
+  color: #fff;
+}
+
+.top .money {
+  font-size: 58rpx;
+  color: #fff;
+  font-weight: 700;
+}
+
+.section {
+  background: #f5f5f5;
+  height: 80rpx;
+  padding: 0 20rpx;
+  font-size: 26rpx;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.footer {
+  position: fixed;
+  z-index: 9999;
+  width: calc(100% - 40rpx);
+  height: 128rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  bottom: 0;
+  padding: 0 20rpx;
+  box-shadow: 0 0 12px 0 rgba(106, 106, 106, 0.22);
+}
+
+.btn_calculate {
+  height: 88rpx;
+  flex: 1;
+  color: #fff;
+  font-size: 32rpx;
+  background: #2973ff;
+  border-radius: 4rpx;
+}
+
+button[disabled]:not([type]) {
+  color: #fff;
+  background-color: #d8d8d8;
+}
+
+.divider {
+  height: 20rpx;
+  background: #f5f5f5;
+}
+
+#form1 .sr-label{
+  background: red
+}

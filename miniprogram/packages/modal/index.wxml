@@ -1,0 +1,78 @@
+<pop-manager
+  show="{{ show }}"
+  type=" center "
+  bindclickmask="handleMaskClick">
+
+  <view wx:if='{{ isClose }}' 
+        class='close' 
+        catchtap='handlerHide'>
+    <sr-icon type='close2' size='28'></sr-icon>
+    <view class='line'></view>
+  </view>
+
+  <view class='sr-modal-body'>
+    <view class='sr-modal-body_inner'>
+      <slot></slot>
+      <view
+          wx:if="{{ title }}"
+          class="sr-modal__title"
+        >{{ title }}</view>
+
+      <view
+        wx:if='{{ message }}'
+        class="sr-modal__content {{ title ? 'sr-modal__content--title' : '' }}"
+      >
+        <text>{{ message }}</text>
+      </view>
+
+      <view class="sr-modal_footer {{ buttonsShowVertical ? 'sr-modal_footer--vertical' : 'sr-modal_footer--horizon' }} {{ !message ? 'sr-modal_footer--title' : '' }}">
+
+          <block
+            wx:for="{{ buttons }}"
+            wx:key="{{ item.text }}-{{ item.type }}"
+          >
+          
+            <sr-button
+              custom-class='sr-modal-custom_button'
+              margin-class="{{ index === 0 && buttonsShowVertical ? 'sr-modal__button-inside--first' : 'sr-modal__button-inside' }}"
+              class="sr-modal_button "
+              data-item="{{ item }}"
+              open-type="{{ item.openType }}"
+              app-parameter='{{ item.appParameter }}'
+              binderror='handlerOnError'
+              bindhandler="handlerButtonClick"
+              height='{{ buttonHeight }}'
+              backgroundColors='{{ item.backgroundColors }}'
+              borderColor='{{ item.borderColor }}'
+              color='{{ item.color }}'
+            >
+
+              <block wx:if='{{item.icon}}'>
+                <sr-icon 
+                  class='sr-modal__icon'
+                  type='{{item.icon.type}}'
+                  size='{{item.icon.size}}'
+                  family='{{item.icon.family}}'
+                  icon-class = '{{ item.icon.iconClass}}'
+                ></sr-icon>
+              </block>
+
+              <view>{{ item.text }}</view>
+            </sr-button>
+
+          </block>
+          <!-- <view wx:if="{{sTitle !== null}}" 
+                class='hnsr-modal_submit' 
+                bindtap='doSubmitHandler'>
+
+              <button >{{sTitle}}</button>
+              <button class='submit' 
+                      open-type="{{openType}}"
+                      >{{sTitle}}</button>
+          </view> -->
+      </view>
+    </view>
+  </view>
+
+
+</pop-manager>

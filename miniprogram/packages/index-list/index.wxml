@@ -1,0 +1,31 @@
+<!--packages/index-list/index.wxml-->
+<view class='indexlist-container' >
+  <block wx:if='{{ds && ds.length}}'>
+    <scroll-view class='indexlist-body'
+                scroll-y="true"
+                scroll-top='{{scrollTop}}'
+                style='height:{{currentHeight}}px;'>
+        <view class='indexlist-content'>
+          <!-- {{touchTip}} -->
+          <slot></slot>
+        </view>
+    </scroll-view>
+
+    <view class='indexlist-nav-container'
+          catchtouchmove='touchMoveHandler'
+          catchtouchend='touchEndHandler'
+        >
+      <view class='indexlist-nav'>
+        <view class='indexlist-navitem' wx:for='{{ds}}' wx:key='{{item.char}}'
+              data-char='{{item.char}}'
+              catchtap='letterTapHandler'>
+            <view>{{item.char}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else >
+    <view class='indelist-empty'>{{emptyTip}}</view>
+  </block>
+
+</view>

@@ -1,0 +1,7 @@
+<view class="rotatePhoto">
+  <image wx:for='{{9}}' src="item.url"></image>
+</view>
+
+<view class="cubePhoto">
+  <image wx:for='{{6}}' src="item.url"></image>
+</view>

@@ -1,0 +1,13 @@
+<popper show="{{show}}" type="bottom">
+  <view class='area-bottom-container'>
+    <view class='header'>
+      <view class='labels'>
+        <view bindtap='onLabelSelect' wx:for='{{labels}}' wx:key='id' data-index='{{index}}' class='label {{index==labels.length-1?"active":""}}'>{{item}}</view>
+      </view>
+      <sr-icon type='close' icon-class='close' bindtap='hide' size='14' />
+    </view>
+    <scroll-view class='items' scroll-y scroll-top='100'>
+      <view bindtap='onItemSelect' wx:for='{{items}}' wx:key='id' data-id='{{item.id}}' data-name='{{shortName?(item.shortName||item.areaName):item.areaName}}' class='item'>{{shortName?(item.shortName||item.areaName):item.areaName}}</view>
+    </scroll-view>
+  </view>
+</popper>

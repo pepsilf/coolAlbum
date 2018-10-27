@@ -1,0 +1,31 @@
+<!--packages/business/order-list-item/index.wxml-->
+<view bindtap='onClick' data-item='{{options.order.data}}' class='order-list-item' style='border-bottom:{{borderBottom}}'>
+
+  <view catchtap='onShopClick' data-item='{{options.shop.data}}' class='shop-info'>
+    <sr-image wx:if='{{options.shop.imageUrl}}' src='{{options.shop.imageUrl}}' image-class='img-shop' />
+    <sr-icon wx:else type='shop_fill' size='32' icon-class='ic-shop' />
+    <text class='shop-name'>{{options.shop.name}}</text>
+    <text style='color: {{primaryColor}};' class='status'>{{options.order.statusText}}</text>
+  </view>
+
+  <view catchtap='onProductClick' data-item='{{options.product.data}}' class='product'>
+    <sr-image src='{{options.product.imageUrl}}' image-class='img-product' />
+    <view class='product-info'>
+      <view class='name'>{{options.product.name}}</view>
+      <view class='spec'>{{options.product.spec?'规格:'+options.product.spec:''}}</view>
+    </view>
+    <view wx:if='{{!options.canEdit}}' class='buy-info'>
+      <view class='price'>￥{{options.product.price}}</view>
+      <view class='count'>x{{options.product.count}}</view>
+    </view>
+  </view>
+
+  <slot />
+
+  <view wx:if='{{options.order.buttons.length}}' class='buttons'>
+    <block wx:for='{{options.order.buttons}}' wx:key='id'>
+      <button catchtap='onButtonClick' data-action='{{item.action}}' style='border: 2rpx solid {{item.primary?primaryColor:"#bababa"}}; color: {{item.primary?primaryColor:"#333"}}'>{{item.name}}</button>
+    </block>
+  </view>
+
+</view>

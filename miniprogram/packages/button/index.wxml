@@ -1,0 +1,60 @@
+<!--components/button/index.wxml-->
+
+<block wx:if='{{formType}}'>
+  <form bindsubmit="collectionFormId" report-submit='{{true}}'>
+    <button
+        class='custom-class margin-class'
+        open-type="{{ isOpenType ? openType : '' }}"
+        catchtap='handlerTap'
+        bindgetuserinfo="bindGetUserinfo"
+        bindgetphonenumber="bindGetPhonenumber"
+        style="{{m.getStyle(backgroundColors,borderColor,color,height)}}"
+        >
+      <slot></slot>
+    </button>
+  </form>
+</block>
+<block wx:else>
+  <button
+        class='custom-class margin-class'
+        open-type="{{ isOpenType ? openType : '' }}"
+        catchtap='handlerTap'
+        bindgetuserinfo="bindGetUserinfo"
+        bindgetphonenumber="bindGetPhonenumber"
+        style="{{m.getStyle(backgroundColors,borderColor,color,height)}}"
+        >
+    <slot></slot>
+  </button>
+</block>
+
+
+
+<wxs module="m">
+  var getStyle = function(backgroundColors,borderColor,color,height) {
+    var style = '';
+    if(backgroundColors && backgroundColors.length) {
+      style += 'background:';
+      if(backgroundColors.length>1) {
+        style += 'linear-gradient(to right,'+backgroundColors.join(',')+');';
+      }
+      else {
+        style += backgroundColors[0];
+      }
+    }
+    
+    if(borderColor) {
+      style += 'border:1px solid '+borderColor+';';
+    }
+
+    if(color) {
+      style += 'color:'+color+';';
+    }
+
+    if(height) {
+      style += 'height:'+height+'px;border-radius: '+height*0.5+'px;';
+    }
+
+    return style;
+  }
+  module.exports.getStyle = getStyle;
+</wxs>

@@ -1,0 +1,61 @@
+/* packages/area/index.wxss */
+
+.area-container {
+  width: 100vw;
+  height: inherit;
+  display: flex;
+}
+
+.area-column {
+  flex: 1;
+}
+
+.area-item {
+  padding: 18rpx;
+  text-align: left;
+}
+
+.area_province .selected {
+  border-left-color: #66bb47;
+  color:#66bb47;
+  background-color: #fff;
+}
+
+.area-item_province  {
+  border-left: 3px solid #d9d9d9;
+}
+
+.area_province {
+  background: #d9d9d9;
+}
+
+
+
+.area_city .selected {
+  border-left-color: #66bb47;
+  color:#66bb47;
+  background-color: #fff;
+}
+
+
+.choose_btn {
+  width: 90%;
+  border-style: none;
+  height: 70rpx;
+  border-radius: 46rpx;
+  display: flex;
+  background-color: #fff;
+  border:1px solid #d9d9d9;
+  align-items: center;
+  justify-content: center;
+  margin: 10rpx auto;
+  font-size: 30rpx;
+  color: #000;
+}
+
+.all_btn {
+  padding: 18rpx;
+  text-align: left;
+  width: 100%;
+  border-radius: 0;
+}

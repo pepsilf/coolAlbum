@@ -1,0 +1,30 @@
+<!--packages/layout/gird.wxml-->
+<import src="./template/grid-rows.wxml" />
+
+<scroll-view class='sr-grid-container' scroll-y="true">
+
+  <block wx:if='{{hasGroup}}'>
+      <view class='content-bar'>
+        <view wx:for="{{dataProvider}}" wx:key="{{item.id}}">
+            <view class='group-title'>{{item[groupLabelField]}}</view>
+            <template is="srGridRows" 
+                data="{{selected:selected,selectGroupMap:selectGroupMap,groupKeyField:groupKeyField,dataProvider:item._list,labelField:labelField,keyField:keyField,selectChangeHandler:selectChangeHandler}}"
+                ></template>
+
+        </view>
+      </view>
+  </block>
+  <block wx:else>
+    <template is="srGridRows" 
+              data="{{selected:selected,dataProvider,labelField:labelField,keyField:keyField,selectChangeHandler:selectChangeHandler}}"
+              ></template>
+  </block>
+  <slot></slot>
+</scroll-view>
+
+<view class='footer-bar' wx:if='{{hasGroup}}'>
+  <button class='reset-btn' bindtap='reset'>取 消</button>
+  <button class='submit-btn' bindtap='submitSelectedHandler'>确 定</button>
+</view>
+
+

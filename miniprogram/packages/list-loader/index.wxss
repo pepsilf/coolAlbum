@@ -1,0 +1,28 @@
+.load-more {
+    height: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.load-more .loading {
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: 8rpx;
+    animation: rotate 0.5s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.load-more .label {
+    font-size: 26rpx;
+    color: #999;
+}

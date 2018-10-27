@@ -1,0 +1,10 @@
+<!--packages/empty/index.wxml-->
+<block wx:if='{{isEmpty}}'>
+  <view class='wx-empty-body'>
+      <image wx:if='{{!!icon}}' class="wx-empty-img" src='{{icon}}'></image>
+    <view class="wx-empty-text">{{title}}</view>
+  </view>
+</block>
+<block wx:else>
+   <slot></slot>
+</block>

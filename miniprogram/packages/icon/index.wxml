@@ -1,0 +1,1 @@
+<view class="{{family?family:'sr-weapp'}}-icon icon-{{ type }} icon-class" style="font-size:{{size}}px"></view>

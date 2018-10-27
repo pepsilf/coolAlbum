@@ -1,0 +1,98 @@
+/* packages/modal/modal.wxss */
+
+
+.sr-modal-body {
+  width: 78vw;
+  background: #fff;
+  border-radius: 12rpx;
+  z-index: 10001;
+}
+
+.sr-modal__title {
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+
+
+.sr-modal-body_inner {
+  padding: 30rpx;
+  
+  display: block;
+}
+
+
+/*
+  当没有Message的Footer样式
+*/
+.sr-modal_footer--title {
+  margin-top: 30rpx;
+}
+
+.sr-modal_footer {
+  padding: 10px 0;
+}
+
+.sr-modal__title {
+  color: #333;
+  font-size: 16px;
+}
+
+
+.sr-modal__content{position:relative;padding:15px 20px 5px;line-height:1.5;min-height:40px}
+.sr-modal__content--title{color:#999;font-size:14px}
+
+.sr-modal_footer--horizon{display:flex}
+
+.sr-modal_button {
+  flex: 1;
+}
+
+
+
+
+.sr-modal-custom_button {
+  margin: 5px;
+  border-style: none;
+  border-radius: 22px;
+  height: 44px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0.5px solid #E62922;
+  color: #E62922;
+  background: #fff;
+}
+
+.sr-modal__button-inside--first {
+  margin-bottom: 30rpx;
+}
+
+.sr-modal__icon {
+  padding-right: 8rpx;
+}
+
+.button__confirm {
+  background: linear-gradient(to right,#FF5B1F , #F92C2C);
+  color: #fff;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top:-110rpx;
+  z-index: 10000;
+  color: #d9d9d9;
+}
+
+.close .line {
+  position: absolute;
+  width: 1rpx;
+  height: 49rpx;
+  top:31px;
+  left: 14px;
+  border-left: 1px solid  #d9d9d9;
+}
+

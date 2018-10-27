@@ -1,0 +1,31 @@
+/* components/tabbar/index.wxss */
+
+.tabbar-container {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  box-shadow: -2px -2px 8px rgba(0,0,0,.2);
+  /* padding-bottom: 35rpx; */
+  background-color: #FFF;
+  z-index: 9999;
+}
+.tabbar-row {
+  display: flex;
+}
+
+.tabbar-col {
+  flex: 1;
+  text-align: center;
+
+  color: #d9d9d9;
+}
+
+.tabbar-row .selected {
+  color: #000;
+}
+
+
+.tabbar-label {
+  font-size: 0.634rem;
+  
+}

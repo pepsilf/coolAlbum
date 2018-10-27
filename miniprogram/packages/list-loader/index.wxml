@@ -1,0 +1,35 @@
+<block wx:if='{{hasData}}'>
+  <slot name="list"></slot>
+  <block wx:if='{{!hasError}}'>
+    <block wx:if='{{!allLoaded}}'>
+      <view class='load-more ex-class'>
+        <image class='loading' src='../resources/images/loading.png'></image>
+        <text class='label'>正在加载...</text>
+      </view>
+    </block>
+    <block wx:else>
+      <block wx:if='{{showAllLoaded}}'>
+        <view class='load-more ex-class'>
+          <text class='label'>已全部加载完</text>
+        </view>
+      </block>
+      <block wx:else>
+        <slot name="allLoaded"></slot>
+      </block>
+    </block>
+  </block>
+  <block wx:else>
+    <slot name="error"></slot>
+  </block>
+</block>
+<block wx:else>
+  <block wx:if='{{!allLoaded}}'>
+    <view class='load-more ex-class'>
+      <image class='loading' src='../resources/images/loading.png'></image>
+      <text class='label'>正在加载...</text>
+    </view>
+  </block>
+  <block wx:else>
+    <slot name="empty"></slot>
+  </block>
+</block>

@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "sr-cell": "/packages/cell/index",
+    "sr-icon": "/packages/icon/index",
+    "sr-panel": "/packages/panel/index",
+    "sr-field": "/packages/form/field/index",
+    "sr-cell-group": "/packages/cell-group/index"
+  }
+}

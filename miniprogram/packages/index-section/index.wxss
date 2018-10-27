@@ -1,0 +1,7 @@
+/* packages/index-section/index.wxss */
+
+.indexsection_label {
+  background-color: #f3f3f3;
+  padding: 8rpx 28rpx;
+  color: #969696;
+}

@@ -1,0 +1,44 @@
+<!--packages/popup-buy/index.wxml-->
+
+<sr-popper show="{{show}}" type="bottom">
+  <view class='popup-buy-container'>
+    <view class='content'>
+
+      <view class='top'>
+        <sr-image src='{{selectedSpecIndex != -1 && options.specList[selectedSpecIndex].imgUrl?options.specList[selectedSpecIndex].imgUrl:options.mainImg}}' image-class='item-img' />
+        <view class='info'>
+          <view class='price'>￥{{selectedSpecIndex == -1 ? options.price : options.specList[selectedSpecIndex].price}}</view>
+          <view wx:if='{{options.stock != -1 && options.specList[selectedSpecIndex].stock != -1}}' class='stock'>库存{{selectedSpecIndex == -1 ? options.stock : options.specList[selectedSpecIndex].stock}}件</view>
+          <block wx:if='{{selectedSpecIndex != -1}}'>
+            <view class='selected-spec'>已选择:“{{options.specList[selectedSpecIndex].name}}”</view>
+          </block>
+          <block wx:elif='{{options.noDefaultSelected}}'>
+            <view class='selected-spec'>请选择下面的规格</view>
+          </block>
+        </view>
+        <sr-icon bindtap='doHide' type='close' icon-class='ic_close' />
+      </view>
+
+      <view wx:if='{{options.specList.length}}' class='spec-view'>
+        <view class='spec-label'>规格</view>
+        <block wx:for='{{options.specList}}' wx:key='id'>
+          <view bindtap='onSpecChange' data-index='{{index}}' data-disabled='{{item.disabled || !item.stock}}' class='spec-item {{selectedSpecIndex==index?"selected":""}} {{item.disabled || !item.stock?"disabled":""}}'>{{item.name}}</view>
+        </block>
+      </view>
+
+      <view class='count-view'>
+        <text class='count-label'>数量</text>
+        <view class='count-btns'>
+          <view bindtap='doSubtract' class='ic-move-wrap'>
+            <sr-icon type='move' size='16' icon-class='ic-move' />
+          </view>
+          <input class='count-input' bindchange='onCountChange' value='{{count}}' type='number' />
+          <view bindtap='doAdd' class='ic-add-wrap'>
+            <sr-icon type='add' size='16' icon-class='ic-add' />
+          </view>
+        </view>
+      </view>
+    </view>
+    <button bindtap='doConfirm' class='btn-confirm'>确认购买</button>
+  </view>
+</sr-popper>

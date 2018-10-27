@@ -1,0 +1,17 @@
+<block wx:if='{{upload}}'>
+  <view class='image-group-class'>
+    <block wx:for='{{upload}}' wx:key='id'>
+      <image wx:if='{{srcList[item]}}' src='{{thumbSrcList[item]}}' data-src='{{srcList[item]}}' mode='{{mode}}' bindtap='onImageClick' class='block image-class {{upload>1?"relative":""}}' binderror='onError' bindload='onLoad'>
+        <view wx:if='{{upload > 1}}' class='icon-delete'>
+          <sr-icon icon-class='ic-delete' type='clear' size='18' catchtap='removeImg' data-index='{{index}}' data-src='{{srcList[item]}}' />
+        </view>
+      </image>
+      <view wx:else bindtap='addImg'>
+        <slot name='add' />
+      </view>
+    </block>
+  </view>
+</block>
+<block wx:else>
+  <image src='{{thumbSrc}}' mode='{{mode}}' bindtap='onImageClick' class='block image-class' binderror='onError' bindload='onLoad'></image>
+</block>

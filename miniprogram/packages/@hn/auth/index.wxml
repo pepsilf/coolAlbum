@@ -1,0 +1,2 @@
+<!--packages/@hn/auth/index.wxml-->
+<sr-modal id='call-modal' is-close='{{ false }}'></sr-modal>

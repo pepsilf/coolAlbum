@@ -1,0 +1,14 @@
+/* packages/see/index.wxss */
+
+.canvas-container {
+  position: relative;
+}
+
+.canvas_show {
+  position: relative;
+}
+
+.canvas_hide {
+  position: fixed;
+  top:10000px;
+}

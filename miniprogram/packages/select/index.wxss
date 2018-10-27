@@ -1,0 +1,14 @@
+.zan-select__list .zan-select__radio{position:absolute;top:0;bottom:0;left:0;right:0;opacity:0}
+
+
+.sr-select__item {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sr-select__icon {
+  position:absolute;
+  right: 20rpx;
+}

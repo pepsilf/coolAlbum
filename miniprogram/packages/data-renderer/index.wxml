@@ -1,0 +1,15 @@
+<!--components/data-renderer/index.wxml-->
+
+<view class='{{ _isDelected ? "is_Deleted is_Touch" : _isTouch ? "is_Touch" : "" }} datarenderer_container '> 
+  <view class='datarenderer  render-class ' 
+        bindtouchstart="_touchStartHandler" 
+        bindtouchmove="_touchMoveHandler"
+        >
+    <view class='inner'>
+      <slot></slot>
+    </view>
+  </view>
+  <view class='inner opt-button option-class'>
+    <view bindtap='removeDataHandler'>{{!_isDelected ? '删 除' : '确定删除'}}</view>
+  </view>
+</view>

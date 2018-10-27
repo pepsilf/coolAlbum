@@ -1,0 +1,41 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/photo/index",
+    "pages/photoShow/index",
+    "pages/addPhoto/index"
+  ],
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#2973FF",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "iconPath": "/images/index-gray.png",
+        "selectedIconPath": "/images/index-on.png",
+        "pagePath": "pages/index/index",
+        "text": "相册圈"
+      },
+      {
+        "iconPath": "/images/me-gray.png",
+        "selectedIconPath": "/images/me-on.png",
+        "pagePath": "pages/photoShow/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "微云",
+    "navigationBarTextStyle": "black"
+  }
+}

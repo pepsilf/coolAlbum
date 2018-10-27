@@ -1,0 +1,28 @@
+<!--packages/data-loader/index.wxml-->
+<block wx:if='{{(showLoading || showDefaultLoading) && isLoading}}'>
+  <block wx:if='{{showDefaultLoading}}'>
+    <view>加载中...</view>
+  </block>
+  <block wx:else>
+    <slot name="loading"></slot>
+  </block>
+</block>
+<block wx:elif='{{(showError || showDefaultError) && isError}}'>
+  <block wx:if='{{showDefaultNoData}}'>
+    <view>出错了！</view>
+  </block>
+  <block wx:else>
+    <slot name="error"></slot>
+  </block>
+</block>
+<block wx:elif='{{(showNoData || showDefaultNoData) && isNoData}}'>
+  <block wx:if='{{showDefaultNoData}}'>
+    <view>没有数据</view>
+  </block>
+  <block wx:else>
+    <slot name="noData"></slot>
+  </block>
+</block>
+<block wx:else>
+  <slot />
+</block>

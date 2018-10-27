@@ -1,0 +1,20 @@
+/* components/data-group/index.wxss */
+
+.datagroup-container {
+  position: relative;
+}
+
+.datagroup-content {
+  align-items: center;
+  justify-content: center;
+}
+
+/* .datagroup-content {
+  display: flex;
+} */
+
+.loadingMore {
+  text-align: center;
+  padding: 20px 0 30px;
+  width: 100vw;
+}

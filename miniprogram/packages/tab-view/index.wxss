@@ -1,0 +1,53 @@
+/* packages/components/tab-view/index.wxss */
+
+.tabs {
+  border-bottom: 1px solid #f5f5f5;
+  border-top: 1px solid #f5f5f5;
+}
+
+.tab-parent {
+  height: 100%;
+  position: relative;
+}
+
+.tab {
+  position: relative;
+}
+
+.tab-badge {
+  transform: translate(50%, -50%);
+  background: #ff2500;
+  padding: 0 6.5rpx;
+  position: absolute;
+  font-size: 22rpx;
+  top: 0;
+  right: -12rpx;
+  color: #fff;
+  min-width: 16rpx;
+  display: flex;
+  border-radius: 14rpx;
+  align-items: center;
+  justify-content: center;
+  background: #f52a2a;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-bottom {
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 40rpx;
+  height: 6rpx;
+  border-radius: 3rpx;
+  background: #333;
+}
+
+.hidden {
+  display: none;
+}

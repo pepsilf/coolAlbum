@@ -1,0 +1,65 @@
+/* components/data-renderer/index.wxss */
+
+view{
+    box-sizing: border-box;
+}
+
+.datarenderer_container {
+
+  position: relative;
+  overflow: hidden;
+  display: flex;
+
+}
+
+.datarenderer {
+  position: relative;
+  width: 100%;
+  transition:all .4s ease;
+  -webkit-transform:translate3d(0,0,0);
+  transform:translate3d(0,0,0);
+  
+}
+
+.inner {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    height: 100%;
+}
+
+.inner.opt-button {
+    background-color: #e64340;
+    width: 180rpx;
+
+    text-align: center;
+    z-index: 1;
+    right: 0;
+    color: #fff;
+
+    /* display: flex;
+    align-items: center;
+    justify-content: center;  
+    height: 100%; */
+    transition:all .4s ease;
+    -webkit-transform:translate3d(100%,0,0);
+    transform:translate3d(100%,0,0);
+}
+
+
+.is_Touch .datarenderer {
+  -webkit-transform:translate3d(-180rpx,0,0);
+  transform:translate3d(-180rpx,0,0);
+}
+
+.is_Touch .opt-button {
+  -webkit-transform:translate3d(0,0,0);
+  transform:translate3d(0,0,0);
+}
+
+.is_Deleted .opt-button {
+  width: 250rpx;
+}

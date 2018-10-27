@@ -1,0 +1,17 @@
+<!--packages/see/index.wxml-->
+<!-- <view class="canvas-container">
+  <canvas  style="left:{{canvasX}}px; width: {{canvasWidth}}px; height: {{canvasHeight}}px;" 
+           canvas-id="srcanvas"
+           />
+</view> -->
+
+
+<view class="canvas-container" >
+
+  <canvas 
+        class='{{hide ? "canvas_hide" : "canvas_show"}}' 
+        style="left:{{canvasX}}px;width:{{canvasWidth}}px;height:{{canvasHeight}}px;" 
+        canvas-id="srCanvas"
+    />
+
+</view>

@@ -1,0 +1,15 @@
+<textarea bindinput='onInput' class='feeling' placeholder-class='placeholder' placeholder='这一刻的心情...' value='{{feeling}}' maxlength='101' />
+
+<view class='images'>
+  <sr-image id='images' srcList='{{images}}' image-class='image-view' image-group-class='img-group' upload='{{9}}' preview bind:onImageChange='onImageChange' origin>
+    <view slot='add' class='image-view add'>
+      <sr-icon type='camera' size='24' />
+      <text>添加照片</text>
+    </view>
+  </sr-image>
+</view>
+
+<view class='photoTypes' >
+  <view class='imgItem {{typeId==item.typeId?"imgItems":""}}' wx:for='{{photoTypes}}' data-typeId='{{item.typeId}}' wx:key='{{item.typeId}}' bindtap='choseType'>{{item.typeName}}</view>
+</view>
+

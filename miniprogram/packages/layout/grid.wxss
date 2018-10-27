@@ -1,0 +1,87 @@
+/* packages/layout/gird.wxss */
+
+.sr-grid-container {
+  height: inherit;
+}
+
+.sr-grid-container_row{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+}
+
+.sr-grid-container_row .content {
+  /* flex: 1;
+  display: inline-block;  
+  box-sizing: border-box;
+
+  border:1px solid #efefef;
+  height: 60rpx; */
+  /* display: table-cell; */
+
+  
+  flex: 1;
+  justify-content:center;
+  
+}
+
+.sr-grid-container_row .selected {
+    background: #66bb47;
+    color:#fff;
+}
+
+.sr-grid-container_row .content .name {
+   height: 100rpx; 
+   /* line-height: 100rpx;
+   vertical-align: middle;
+   padding: 10rpx; */
+   border:1rpx solid #efefef; 
+   text-align: center;
+}
+
+ .content .label {
+  position: relative;
+  font-size: 0.888rem;
+  height: inherit;
+  padding: 2rpx;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+} 
+
+.group-title {
+  padding: 18rpx;
+}
+
+.footer-bar {
+  display: flex;
+  position:fixed;
+  bottom: 32rpx;
+  width: 100vw;
+  border-top: 1rpx solid #d8d8d8;
+  border-bottom: 1rpx solid #d8d8d8;
+}
+.footer-bar button {
+  flex: 1;
+  border-style: none;
+  border-radius: 0;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  margin: 0;
+}
+
+.reset-btn {
+  background-color: #fff;
+  color: #000;
+}
+
+.submit-btn {
+  background-color: #66bb47;
+  color: #fff;
+}
+
+.content-bar {
+  padding-bottom: 200rpx;
+}

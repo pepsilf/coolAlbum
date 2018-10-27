@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "sr-popper-seletor": "../../popper-seletor/index",
+    "sr-layout-grid": "../../layout/grid",
+    "sr-area": "../area/index",
+    "sr-icon": "../../icon/index",
+    "sr-category": "../category/index"
+  }
+}

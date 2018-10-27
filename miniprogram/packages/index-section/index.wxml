@@ -1,0 +1,7 @@
+<!--packages/index-section/index.wxml-->
+<view class='indexsection'>
+  <view class='indexsection_label'>{{char}}</view>
+  <view class='indexsection_body' >
+    <slot></slot>
+  </view>
+</view>

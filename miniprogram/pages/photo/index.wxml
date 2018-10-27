@@ -1,0 +1,27 @@
+<sr-image id='images' srcList='{{images}}' image-class='image-view' image-group-class='img-group' upload='{{9}}' preview bind:onImageChange='onImageChange' origin>
+  <view slot='add' class='image-view add'>
+    <sr-icon type='camera' size='32' />
+    <text>添加图片</text>
+  </view>
+</sr-image>
+
+<view bindtap='doUpload' class="doUpload">上传</view>
+
+<!--pages/calculator/index.wxml-->
+<view class='top'>
+  <text class='label'>预估收益(元)</text>
+  <text class='money'>{{money}}</text>
+</view>
+<view class='section'>计算利润管理操性文字</view>
+<sr-form id='form1' options='{{ form1 }}' bindhandledoSth='handledoSth'></sr-form>
+
+<view class='section'>代卖费用</view>
+<sr-form id='form2' options='{{ form2 }}'></sr-form>
+
+<view class='divider' />
+<sr-form id='form3' options='{{ form3 }}'></sr-form>
+<view class='divider' />
+
+<view class='footer'>
+  <button bindtap='doCalculate' class='btn_calculate' disabled='{{false}}'>计算利润</button>
+</view>

@@ -1,0 +1,31 @@
+<view class='datagroup-container' >
+  <scroll-view wx:if='{{isScroll}}' class='datagroup-body'
+               scroll-y="true"
+               bindscrolltolower='scrollToBottomHandler'
+               style='height:{{currentHeight}}px;'>
+      <view class='datagroup-content content-class'>
+        <slot></slot>
+      </view>
+  </scroll-view>
+  <view wx:else class='datagroup-content content-class'>
+    <slot></slot>
+  </view>
+
+
+  <block wx:if='{{isEmpty}}'>
+    <block wx:if='{{emptyTip}}'>
+      <view class='loadingMore tip-class'>
+        {{emptyTip}}
+      </view>
+    </block>
+    <block wx:else>
+      <view class='loadingMore tip-class'>
+        <slot name='empty'></slot>
+      </view>
+    </block>
+  </block>
+  <view wx:if='{{!isLastPage}}' 
+        class='loadingMore tip-class'>
+      正在加载....
+  </view>
+</view>

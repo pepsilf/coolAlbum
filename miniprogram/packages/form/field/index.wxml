@@ -1,0 +1,86 @@
+
+
+
+<view class=' sr-field {{ type === "textarea" ? "sr-field__line" : "sr-field__text" }} field-class'
+      >
+    
+    <block wx:if='{{!isPreview}}'>
+      <block wx:if='{{type == "select"}}'>
+
+          <sr-popper-select show='{{show}}' 
+                            title='{{ds.title}}' 
+                            scrollHeight='{{ds.scrollHeight}}' 
+                            bindhide='handlerHide'>
+
+            <sr-select items='{{ds.items}}' 
+                      selectedValue="{{selected.value}}"
+                      bindchange='handlerSelectChange'
+                      ></sr-select>
+
+          </sr-popper-select>   
+
+      </block>
+      <block wx:if='{{ !isLink && type == "input" }}'>
+          <input
+              type="{{ inputType || 'text' }}"
+              value="{{ value }}"
+              placeholder="{{ placeholder }}"
+              maxlength="{{ maxLength }}"
+              class="sr-field__input sr-cell__bd sr-field__input--right"
+              placeholder-class="sr-field__placeholder"
+              bindinput="handleFieldChange"
+            />
+            <block wx:if='{{ ds && ds.items }}'>
+                <label class='sr-label'
+                      catchtap = 'handlerPopperTap'
+                      >
+                  <text class='sr-label__text'>{{selected.label}}</text>
+                  <sr-icon class='sr-select__icon' type="down" />
+                  <sr-popper-select show='{{show}}'                           
+                                    title='{{ds.title}}' 
+                                    scrollHeight='{{ds.scrollHeight}}' 
+                                    bindhide='handlerHide'>
+
+                    <sr-select items='{{ds.items}}' 
+                              selectedValue='{{selected.value}}' 
+                              bindchange='handlerPopperSelectChange'
+                              ></sr-select>
+
+                  </sr-popper-select>  
+
+                </label>
+            </block>
+            <block wx:if='{{ tip }}'>
+                <text>{{tip}}</text>
+            </block>
+            <block wx:if='{{ tips }}'>
+                <text class='btns' bindtap='handledoSth'>{{tips}}</text>
+            </block>
+      </block>
+      <block wx:if='{{ !isLink && type === "textarea" && !isHide }}'>
+
+          <textarea
+            value="{{ value }}"
+            placeholder="{{ placeholder }}"
+            maxlength="{{ maxLength }}"
+            class="sr-field__textarea"
+            bindinput="handleFieldChange"
+          >
+          
+          </textarea>
+
+          <view class='sr-tip_len'> {{valueLength}} / {{maxLength}}</view>
+      </block>
+    </block>
+
+    <block wx:else>
+      <block wx:if='{{ !isLink && type == "input" }}'>
+            <text>{{value}}</text>
+            <block wx:if='{{ ds && ds.items }}'><text class='sr-tip'>{{ selected.label }}</text></block>
+            <block wx:if='{{ tip }}'><text class='sr-tip'>{{tip}}</text></block>
+      </block>
+      <block wx:if='{{ !isLink && type === "textarea" }}'>
+          <view class='sr_display--textarea'>{{value}}</view>
+      </block>
+    </block>
+</view>

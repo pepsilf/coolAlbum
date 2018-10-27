@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "sr-popper-seletor": "../../popper-seletor/index",
+    "sr-layout-grid": "../../layout/grid"
+  }
+}

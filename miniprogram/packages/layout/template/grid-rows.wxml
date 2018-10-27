@@ -1,0 +1,34 @@
+
+<template name="srGridRows">
+  <wxs module="m">
+  var selected = function(selected,item,keyField,map,groupKeyField) {
+
+    if(map && selected && item) {
+        var key = item[groupKeyField];
+        var _selected = key ? map[key.toString()] : null;
+        if(_selected) {
+          return _selected[keyField] == item[keyField] ? 'selected' : '';
+        }
+    }
+    else {
+      return item && selected && selected[keyField] == item[keyField] ? 'selected' : '';
+    }
+  }
+  module.exports.selected = selected;
+  </wxs>
+
+  <view wx:for="{{dataProvider}}" wx:key="{{rows.id}}"
+        wx:for-item="rows" 
+        class='sr-grid-container_row'>
+      <view wx:for="{{rows}}" 
+            wx:key="{{item.id}}"
+            class='content'>
+          <view class="{{ item ? 'name' : ''}} {{ m.selected(selected,item,keyField,selectGroupMap,groupKeyField) }}" 
+                data-selected='{{item}}' 
+                bindtap='selectChangeHandler'>
+              <view class='label'>{{item[labelField]}}</view>
+          </view>
+      </view>
+  </view>
+</template>
+

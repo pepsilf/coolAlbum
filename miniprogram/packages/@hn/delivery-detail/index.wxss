@@ -1,0 +1,173 @@
+/* packages/@hn/delivery-detail/index.wxss */
+
+.empty {
+  margin-top: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  color: #333;
+  flex-direction: column;
+}
+
+.empty image {
+  width: 260rpx;
+}
+
+.empty text {
+  margin-top: 42rpx;
+}
+
+.container {
+  padding: 48rpx 30rpx;
+}
+
+.trace {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 40rpx;
+  position: relative;
+}
+
+.left {
+  width: 40rpx;
+}
+
+.line {
+  position: absolute;
+  z-index: -1;
+  width: 1px;
+  height: 100%;
+  left: 20rpx;
+  top: 0;
+  background: #e3e3e3;
+}
+
+.circle {
+  width: 40rpx;
+  height: 40rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle.active {
+  width: 39rpx;
+  height: 39rpx;
+  border-radius: 20rpx;
+  border: 1px solid #f52a2a;
+}
+
+.inner-circle {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 12rpx;
+  background: #e4e4e4;
+  margin-left: 8rpx;
+}
+
+.inner-circle.active {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 15rpx;
+  background: #f52a2a;
+  margin: 0;
+}
+
+.right {
+  margin-left: 20rpx;
+  margin-top: -6rpx;
+}
+
+.station {
+  font-size: 26rpx;
+  color: #222;
+  line-height: 42rpx;
+}
+
+.station.active, .time.active {
+  color: #f52a2a;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 33rpx;
+  margin-top: 4rpx;
+}
+
+.mobile {
+  color: rgb(71, 108, 230);
+  /* margin: 0 10rpx; */
+}
+
+.transport {
+  height: 150rpx;
+  position: relative;
+  display: flex;
+  font-size: 28rpx;
+  color: #222;
+  align-items: center;
+  border-bottom: 20rpx solid #f5f5f5;
+  padding: 23rpx 30rpx 27rpx 23rpx;
+}
+
+.transport .right, .receiver .right {
+  margin-left: 20rpx;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.transport .state {
+  height: 50rpx;
+  margin-bottom: 6rpx;
+}
+
+.transport .state text {
+  color: #e62922;
+}
+
+.transport .company {
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.transport .remark {
+  height: 50rpx;
+  margin-top: 6rpx;
+}
+
+.transport .view-detail {
+  display: flex;
+  align-items: center;
+}
+
+.transport .ic-right {
+  margin-left: 10rpx;
+}
+
+.copy-btn {
+  padding: 0 30rpx;
+  height: 45rpx;
+  flex-shrink: 0;
+  border: 1px solid #e62922;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #e62922;
+  background: #fff;
+  margin: 0;
+}
+
+.ic-deliver {
+  color: #999;
+}
